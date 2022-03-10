@@ -1,19 +1,46 @@
 "use strict";
 
-function hello() {
-	console.log('Привет');
-	debugger;
-}
-hello();
-function hi() {
-	console.log('Hi');
-}
-hi();
+// Строка
 
-const arr = [1, 2, 5, 43, 23],
-	sorted = arr.sort(compareNum);
+//1
+console.log(typeof (String(null)));
+console.log(String(4));
 
-function compareNum(a, b) {
-	return a - b;
+//2
+console.log(typeof (5 + ''));
+
+const num = 5;
+
+console.log("https://vk.com/catalog/" + num);
+
+const fontSize = 26 + 'px';
+
+//Число
+
+//1
+console.log(typeof (Number('4')));
+
+//2
+console.log(typeof (+'5'));
+
+//3
+console.log(typeof (parseInt("15px", 10)));
+
+//let answer = +prompt("Hello", "");
+
+// Булиновое значение
+
+//0, '', null, undefined, NaN;
+
+//1
+let switcher = null;
+
+if (switcher) {
+	console.log('Working');
 }
-console.log(sorted);
+
+//2
+console.log(typeof (Boolean('4')));
+
+//3
+console.log(typeof (!!"44"));
