@@ -1,48 +1,48 @@
-"use strict";
+/* Задания на урок:
 
-const box = document.getElementById('box'),
-	btns = document.getElementsByTagName('button'),
-	circles = document.getElementsByClassName('circle'),
-	wrapper = document.querySelector('.wrapper'),
-	hearts = wrapper.querySelectorAll('.heart'),
-	oneHeart = wrapper.querySelector('.heart');
+1) Удалить все рекламные блоки со страницы (правая часть сайта)
 
-// box.style.backgroundColor = 'blue';
-// box.style.width = '300px';
+2) Изменить жанр фильма, поменять "комедия" на "драма"
 
-box.style.cssText = `background-color: green; width: 500px;`;
+3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
+Реализовать только при помощи JS
 
-btns[1].style.borderRadius = '100%';
-circles[1].style.backgroundColor = 'red';
+4) Список фильмов на странице сформировать на основании данных из этого JS файла.
+Отсортировать их по алфавиту 
 
-// for (let i = 0; i < hearts.length; i++) {
-// 	hearts[i].style.backgroundColor = 'green';
-// }
+5) Добавить нумерацию выведенных фильмов */
 
-hearts.forEach(item => {
-	item.style.backgroundColor = "blue";
+'use strict';
+
+const movieDB = {
+	movies: [
+		"Логан",
+		"Лига справедливости",
+		"Ла-ла лэнд",
+		"Одержимость",
+		"Скотт Пилигрим против..."
+	]
+};
+
+const adv = document.querySelectorAll('.promo__adv img'),
+	promo = document.querySelector('.promo__bg'),
+	genre = promo.querySelector('.promo__genre'),
+	movieList = document.querySelector('.promo__interactive-list');
+console.log(adv);
+
+adv.forEach(item => {
+	item.remove();
 });
+genre.textContent = 'Драма';
+promo.style.cssText = 'background-image: url("img/bg.jpg")';
 
-const div = document.createElement('div');
-// const text = document.createTextNode('Тут был я');
+movieList.innerHTML = "";
 
-div.classList.add('black');
+movieDB.movies.sort();
 
-wrapper.append(div);
-// wrapper.appendChild(div);
-// wrapper.insertBefore(div, hearts[1]);
-
-// hearts[0].before(div);
-// hearts[0].after(div);
-
-// circles[0].remove();
-// wrapper.removeChild(hearts[1]);
-
-// hearts[0].replaceWith(circles[0]);
-// wrapper.replaceChild(circles[0], hearts[0]);
-
-div.innerHTML = "<h1>Hello World</h1>";
-
-// div.textContent = "Hello";
-
-div.insertAdjacentHTML("afterend", '<h2>Hello!</h2>');
+movieDB.movies.forEach((film, i) => {
+	movieList.innerHTML += `
+	<li class="promo__interactive-item">${i + 1}) ${film}<div class="delete"></div></li>`;
+	i++;
+	console.log(i);
+});
