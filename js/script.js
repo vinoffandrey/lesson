@@ -1,36 +1,16 @@
 'use strict';
 
-window.addEventListener('DOMContentLoaded', () => {
+const p = document.querySelectorAll('p');
+console.log(p);
 
-	// touchstart
-	// touchmove
-	// touchend
-	// touchenter
-	// touchleave
-	// touchcancel
+function loadScript(src) {
+	const script = document.createElement('script');
+	script.src = src;
+	script.async = false;
+	document.body.append(script);
+}
 
-	const box = document.querySelector('.box');
+loadScript("js/test.js");
+loadScript("js/some.js");
 
-	box.addEventListener('touchstart', (e) => {
-		e.preventDefault();
 
-		console.log('Start');
-		console.log(e.targetTouches);
-	});
-
-	box.addEventListener('touchmove', (e) => {
-		e.preventDefault();
-
-		console.log(e.targetTouches[0].pageX);
-	});
-
-	// box.addEventListener('touchend', (e) => {
-	// 	e.preventDefault();
-
-	// 	console.log('End');
-	// });
-});
-
-// touches сколько пальцев было задействовано
-// targetTouches
-// changedTouches 
