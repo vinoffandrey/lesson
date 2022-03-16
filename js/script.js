@@ -100,28 +100,41 @@ window.addEventListener('DOMContentLoaded', function () {
 		close = document.querySelector('[data-close]'),
 		modal = document.querySelector('.modal');
 
+	function openModal() {
+		modal.classList.toggle('_active');
+		document.body.style.overflow = "hidden";
+		clearInterval(modalTimerId);
+	}
 	btns.forEach(element => {
-		element.addEventListener('click', () => {
-			modal.classList.toggle('_active');
-			document.body.style.overflow = "hidden";
-		});
+		element.addEventListener('click', openModal);
 	});
 	function closeModal() {
 		modal.classList.remove('_active');
 		document.body.style.overflow = "";
 	}
-	close.addEventListener('click', closeModal());
+	close.addEventListener('click', closeModal);
 
 	modal.addEventListener('click', (e) => {
 		if (e.target === modal) {
 			closeModal();
 		}
 	});
+
 	document.addEventListener('keydown', (e) => {
 		if (e.code === 'Escape' && modal.classList.contains('_active')) {
 			closeModal();
 		}
 	});
+
+	const modalTimerId = setTimeout(openModal, 5000);
+
+	function showModalByScroll() {
+		if (window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight - 1) {
+			openModal();
+			window.removeEventListener('scroll', showModalByScroll);
+		}
+	}
+	window.addEventListener('scroll', showModalByScroll);
 	//Modal другой вариант
 
 	// const modalTrigger = document.querySelectorAll('[data-modal]'),
