@@ -31,3 +31,10 @@ git commit -a -m "Название комита" создать название
 git push залить комит
 
 git pull вытащить комит
+
+
+
+Ошибки:
+fatal: Unable to create 'D:/all_projects/lestorg/.git/index.lock': File exists.
+
+Решение: rm .git/index.lock
