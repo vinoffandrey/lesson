@@ -43,3 +43,7 @@ git pull вытащить комит
 fatal: Unable to create 'D:/all_projects/lestorg/.git/index.lock': File exists.
 
 Решение: rm .git/index.lock
+
+# Работа с json сервером
+---
+npx json-server db.json запуск сервера
