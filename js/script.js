@@ -202,30 +202,37 @@ window.addEventListener('DOMContentLoaded', function () {
 	// 	});
 
 
-	getResource('http://localhost:3000/menu')
-		.then(data => createCard(data));
+	// getResource('http://localhost:3000/menu')
+	// 	.then(data => createCard(data));
 
-	// Динамическое формирование краточек товара с подвязкой из БД
-	function createCard(data) {
-		data.forEach(({ img, altimg, title, descr, price }) => {
-			const element = document.createElement('div');
-			price = price * 27;
-			element.classList.add('menu__item');
+	// // Динамическое формирование краточек товара с подвязкой из БД
+	// function createCard(data) {
+	// 	data.forEach(({ img, altimg, title, descr, price }) => {
+	// 		const element = document.createElement('div');
+	// 		price = price * 27;
+	// 		element.classList.add('menu__item');
 
-			element.innerHTML = `
-			<img src=${img} alt=${altimg}>
-					<h3 class="menu__item-subtitle">${title}</h3>
-					<div class="menu__item-descr">${descr}</div>
-					<div class="menu__item-divider"></div>
-					<div class="menu__item-price">
-						 <div class="menu__item-cost">Цена:</div>
-						 <div class="menu__item-total"><span>${price}</span> грн/день</div>
-					</div>
-			`;
+	// 		element.innerHTML = `
+	// 		<img src=${img} alt=${altimg}>
+	// 				<h3 class="menu__item-subtitle">${title}</h3>
+	// 				<div class="menu__item-descr">${descr}</div>
+	// 				<div class="menu__item-divider"></div>
+	// 				<div class="menu__item-price">
+	// 					 <div class="menu__item-cost">Цена:</div>
+	// 					 <div class="menu__item-total"><span>${price}</span> грн/день</div>
+	// 				</div>
+	// 		`;
 
-			document.querySelector('.menu .container').append(element);
+	// 		document.querySelector('.menu .container').append(element);
+	// 	});
+	// }
+
+	axios.get('http://localhost:3000/menu')
+		.then(data => {
+			data.data.forEach(({ img, altimg, title, descr, price }) => {
+				new MenuCard(img, altimg, title, descr, price, ".menu .container").render();
+			});
 		});
-	}
 	// Forms
 
 	const forms = document.querySelectorAll('form');
