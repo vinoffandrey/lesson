@@ -1,8 +1,5 @@
-'use strict';
+import { one, two } from './test.js';
+import sayHi from './test.js';
 
-const myModule = require('./test');
-
-const myModuleInstance = new myModule();
-
-myModuleInstance.hello();
-myModuleInstance.goodbye();
+console.log(`${one} and ${two}`);
+sayHi();
