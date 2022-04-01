@@ -47,3 +47,12 @@ fatal: Unable to create 'D:/all_projects/lestorg/.git/index.lock': File exists.
 # Работа с json сервером
 ---
 npx json-server db.json запуск сервера
+
+# Работа с Webpack
+---
+mkdir webpack-demo
+cd webpack-demo
+npm init -y
+npm install webpack webpack-cli --save-dev
+npx webpack - запуск Webpack
+Условия: в корне папки src лежит index.js
