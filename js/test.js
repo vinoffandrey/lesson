@@ -1,1 +1,1 @@
-console.log('Новый скрипт!');
+const app = 'data';
