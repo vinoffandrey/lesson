@@ -65,3 +65,10 @@ npx webpack - запуск Webpack
 # Работа с Babeljs (подгоняет код под старые браузеры)
 ---
 npm install --save-dev @babel/core @babel/cli @babel/preset-env устанавливаем в проект
+
+$ npm install --save @babel/polyfill устанавливаем полифилы
+
+$ npm i --save-dev babel-loader устанавливаем связь webpack с babel
+
+$ npm i --save-dev core-js устанавливаем библиотеку core-js(берёт только нужные полифилы)
+
