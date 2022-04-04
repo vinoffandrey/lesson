@@ -61,3 +61,7 @@ npm install webpack webpack-cli --save-dev
 npx webpack - запуск Webpack
 
 Условия: в корне папки src лежит index.js
+
+# Работа с Babeljs (подгоняет код под старые браузеры)
+---
+npm install --save-dev @babel/core @babel/cli @babel/preset-env устанавливаем в проект
