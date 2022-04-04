@@ -1,24 +1,16 @@
-'use strict';
+//import $ from 'jquery';
 
-try {
-	document.querySelector('#colors').addEventListener('click', () => {
-		console.log('click');
+//import { reduce } from "core-js/core/array";
+
+$(document).ready(function () {
+	$('.header__link:first').hover(function () {
+		$(this).toggleClass('active');
 	});
-} catch (e) {
-	console.log(e);
-}
-console.log('normal');
 
-// try {
-// 	console.log('Normal');
-// 	console.log(a);
-// 	console.log('result');
-// } catch (error) {
-// 	console.log(error.name);
-// 	console.log(error.message);
-// 	console.log(error.stack);
-// } finally {
-
-// }
-
-// console.log('Still normal');
+	$('.header__link:eq(1)').on('click', function () {
+		//$('.header__link:even').fadeToggle(300);
+		$('.header__link:even').animate({
+			opacity: ".8"
+		}, 2000);
+	});
+});
