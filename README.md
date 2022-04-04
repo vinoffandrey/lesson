@@ -72,3 +72,7 @@ $ npm i --save-dev babel-loader устанавливаем связь webpack с
 
 $ npm i --save-dev core-js устанавливаем библиотеку core-js(берёт только нужные полифилы) https://github.com/zloirock/core-js
 
+$ npm install es6-promise установка es6 
+
+$ npm i nodelist-foreach-polyfill установка полифилла для forEach(всё искать на https://www.npmjs.com/)
+
