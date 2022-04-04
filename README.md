@@ -76,3 +76,7 @@ $ npm install es6-promise установка es6
 
 $ npm i nodelist-foreach-polyfill установка полифилла для forEach(всё искать на https://www.npmjs.com/)
 
+# Работа с jQuery (
+---
+npm i jquery --save устанавливает библиотеку в проект
+import 'jquery'; прописать надо в файле sctipt.js. подключает библиотеку
